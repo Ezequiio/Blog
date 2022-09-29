@@ -1,18 +1,14 @@
 <?php
-
 namespace App\Controller;
 
 class HomeController
 {
     public function index()
     {
-        // Contacter le modèle pour récupérer les données : RIEN A RECUPERER !!!
+        ob_start();
+        require(dirname(__DIR__) . '/view/home/index.php');
+        $content=ob_get_clean();
 
-        // Traiter les données : RIEN A TRAITER
-
-        // Injecter les donnèes dans la vue.
-
-        require(ROOT . '/src/view/homepage.php');
-     
+        require(dirname(__DIR__) . '/view/base.php');
     }
 }
